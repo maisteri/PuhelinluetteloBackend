@@ -6,7 +6,12 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "build:ui": "rm -rf build && cd ../palautukset/osa2/puhelinluettelo/ && npm run build && cp -r build ../../../PuhelinluetteloBackend/",
+    "deploy": "flyctl deploy",
+    "deploy:full": "npm run build:ui && npm run deploy",
+    "logs:prod": "flyctl logs",
+    "lint": "npx eslint index.js"
   },
   "author": "Atte Kivistö",
   "license": "ISC",

@@ -32,6 +32,8 @@ let persons = [
   }
 ]
 
+app.use(express.static('build'))
+
 app.get('/info', (req, res) => {
   res.status(200).end(
     `Phonebook has info for ${persons.length} people<br><br>${new Date()}`
